@@ -21,4 +21,12 @@ object Main_Form: TMain_Form
     Caption = 'Button1'
     TabOrder = 0
   end
+  object Button2: TButton
+    Left = 208
+    Top = 200
+    Width = 75
+    Height = 25
+    Caption = 'Button2'
+    TabOrder = 1
+  end
 end

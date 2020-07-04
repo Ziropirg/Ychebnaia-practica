@@ -12,6 +12,7 @@ class TMain_Form : public TForm
 {
 __published:	// IDE-managed Components
         TButton *Button1;
+        TButton *Button2;
 private:	// User declarations
 public:		// User declarations
         __fastcall TMain_Form(TComponent* Owner);
