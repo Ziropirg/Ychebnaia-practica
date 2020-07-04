@@ -7,12 +7,20 @@
 #include <Controls.hpp>
 #include <StdCtrls.hpp>
 #include <Forms.hpp>
+#include <ExtCtrls.hpp>
+#include <Graphics.hpp>
 //---------------------------------------------------------------------------
 class TMain_Form : public TForm
 {
 __published:	// IDE-managed Components
-        TButton *Button1;
-        TButton *Button2;
+        TButton *Start_Game;
+        TImage *Main_Image;
+        TImage *Item1;
+        TImage *Item2;
+        TImage *Item3;
+        TImage *Item4;
+        TImage *Item5;
+        void __fastcall Start_GameClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
         __fastcall TMain_Form(TComponent* Owner);

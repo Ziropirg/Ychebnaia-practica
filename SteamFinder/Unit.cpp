@@ -14,3 +14,12 @@ __fastcall TMain_Form::TMain_Form(TComponent* Owner)
 {
 }
 //---------------------------------------------------------------------------
+
+
+
+void __fastcall TMain_Form::Start_GameClick(TObject *Sender)
+{
+ Item1->Picture->LoadFromFile();        
+}
+//---------------------------------------------------------------------------
+
