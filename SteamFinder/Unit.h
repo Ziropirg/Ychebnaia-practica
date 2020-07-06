@@ -22,6 +22,7 @@ __published:	// IDE-managed Components
         TImage *Item4;
         TImage *Item5;
         TImageList *Set_of_Items;
+        TLabel *Label1;
         void __fastcall Start_GameClick(TObject *Sender);
         void __fastcall Item1Click(TObject *Sender);
 private:	// User declarations
