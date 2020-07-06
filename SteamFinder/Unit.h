@@ -9,6 +9,7 @@
 #include <Forms.hpp>
 #include <ExtCtrls.hpp>
 #include <Graphics.hpp>
+#include <ImgList.hpp>
 //---------------------------------------------------------------------------
 class TMain_Form : public TForm
 {
@@ -20,7 +21,9 @@ __published:	// IDE-managed Components
         TImage *Item3;
         TImage *Item4;
         TImage *Item5;
+        TImageList *Set_of_Items;
         void __fastcall Start_GameClick(TObject *Sender);
+        void __fastcall Item1Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
         __fastcall TMain_Form(TComponent* Owner);
