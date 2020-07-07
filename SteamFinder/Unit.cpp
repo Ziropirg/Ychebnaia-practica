@@ -29,8 +29,8 @@ void __fastcall TMain_Form::Start_GameClick(TObject *Sender)
      Item3_x, Item3_y,
      Item4_x, Item4_y,
      Item5_x, Item5_y;
- string Pict_1, Pict_2, Pict_3, Pict_4, Pict_5;
- 
+ string Pict_1, Pict_2, Pict_3, Pict_4, Pict_5,Main_Picture;
+
  // Make: Folder with level and paths to images in the file and levels
 
  //The task of random coordinates
@@ -65,7 +65,7 @@ void __fastcall TMain_Form::Start_GameClick(TObject *Sender)
         Item3_x>> Item3_y>>
         Item4_x>> Item4_y>>
         Item5_x>> Item5_y>>
-        Pict_1>> Pict_2>> Pict_3>> Pict_4>> Pict_5;
+        Pict_1>> Pict_2>> Pict_3>> Pict_4>> Pict_5>>Main_Picture;
 
  //The assignment of coordinates to the pictures
  Item1->Left = Item1_x; Item1->Top = Item1_y;
@@ -79,7 +79,8 @@ void __fastcall TMain_Form::Start_GameClick(TObject *Sender)
  Item2->Picture->LoadFromFile(Pict_2.c_str());
  Item3->Picture->LoadFromFile(Pict_3.c_str());
  Item4->Picture->LoadFromFile(Pict_4.c_str());
- Item5->Picture->LoadFromFile(Pict_5.c_str());   
+ Item5->Picture->LoadFromFile(Pict_5.c_str());
+ Main_Image->Picture->LoadFromFile(Main_Picture.c_str());
  in_f.close();
 }
 //---------------------------------------------------------------------------
@@ -122,4 +123,10 @@ void __fastcall TMain_Form::Item5Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+
+void __fastcall TMain_Form::End_GameClick(TObject *Sender)
+{
+ exit(0);
+}
+//---------------------------------------------------------------------------
 

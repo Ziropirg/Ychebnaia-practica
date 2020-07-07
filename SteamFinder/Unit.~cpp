@@ -49,11 +49,16 @@ void __fastcall TMain_Form::Start_GameClick(TObject *Sender)
         Item4_x<<" "<< Item4_y<<" "<<
         Item5_x<<" "<< Item5_y<<" "<<
         Pict_1<<" "<< Pict_2<<" "<< Pict_3<<" "<< Pict_4<<" "<< Pict_5;
-
  out_f.close();      */
+
  in_f.open(".\\levels\\1.txt");
+
+ //Add a job with a tag when finding an item
+ //change the name of a file with a level to +1 to open the next level
+
  /*if (in_f.open(".\\levels\\1.txt").isOpen())
  ShowMessage("Everything is bad, nothing has opened!"); */
+
  //Loading coordinates from a file
  in_f>>Item1_x>> Item1_y>>
         Item2_x>> Item2_y>>

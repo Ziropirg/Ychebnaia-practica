@@ -31,6 +31,7 @@ __published:	// IDE-managed Components
         void __fastcall Item4Click(TObject *Sender);
         void __fastcall Item5Click(TObject *Sender);
         void __fastcall NoTrue();
+        void __fastcall End_GameClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
         __fastcall TMain_Form(TComponent* Owner);
