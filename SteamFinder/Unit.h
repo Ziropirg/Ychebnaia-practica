@@ -24,7 +24,6 @@ __published:	// IDE-managed Components
         TLabel *Score;
         TLabel *Score_Sizer;
         TButton *End_Game;
-        TLabel *Label1;
         void __fastcall Start_GameClick(TObject *Sender);
         void __fastcall Item1Click(TObject *Sender);
         void __fastcall Item2Click(TObject *Sender);
