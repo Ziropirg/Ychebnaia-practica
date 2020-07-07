@@ -22,9 +22,15 @@ __published:	// IDE-managed Components
         TImage *Item4;
         TImage *Item5;
         TImageList *Set_of_Items;
-        TLabel *Label1;
+        TLabel *Score;
+        TLabel *Score_Sizer;
+        TButton *End_Game;
         void __fastcall Start_GameClick(TObject *Sender);
         void __fastcall Item1Click(TObject *Sender);
+        void __fastcall Item2Click(TObject *Sender);
+        void __fastcall Item3Click(TObject *Sender);
+        void __fastcall Item4Click(TObject *Sender);
+        void __fastcall Item5Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
         __fastcall TMain_Form(TComponent* Owner);
