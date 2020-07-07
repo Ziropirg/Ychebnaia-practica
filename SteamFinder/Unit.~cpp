@@ -10,7 +10,6 @@
 #pragma resource "*.dfm"
 TMain_Form *Main_Form;
 //“ут объ€вл€ть пользовательские функции (глобальные)
-Void NoTrue();
 //---------------------------------------------------------------------------
 __fastcall TMain_Form::TMain_Form(TComponent* Owner)
         : TForm(Owner)
@@ -77,7 +76,7 @@ void __fastcall TMain_Form::Start_GameClick(TObject *Sender)
  in_f.close();
 }
 //---------------------------------------------------------------------------
-Void NoTrue()
+void __fastcall TMain_Form::NoTrue()
 {
  ShowMessage("Ёто не то, что вы ищете!");
  Score_Sizer->Caption = IntToStr(StrToInt(Score_Sizer->Caption)-1);

@@ -76,7 +76,7 @@ void __fastcall TMain_Form::Start_GameClick(TObject *Sender)
  in_f.close();
 }
 //---------------------------------------------------------------------------
-void NoTrue(TObject *Sender)
+void __fastcall TMain_Form::NoTrue()
 {
  ShowMessage("Это не то, что вы ищете!");
  Score_Sizer->Caption = IntToStr(StrToInt(Score_Sizer->Caption)-1);
