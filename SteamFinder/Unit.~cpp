@@ -31,7 +31,7 @@ void __fastcall TMain_Form::Start_GameClick(TObject *Sender)
      Item5_x, Item5_y,
      Pict_1, Pict_2, Pict_3, Pict_4, Pict_5;
  string Find;
-
+ //Папка с уровнем и путями к картинкам в файле
  //Задание случайных координат
  Item1_x=random(900); Item1_y=random(600);
  Item2_x=random(900); Item2_y=random(600);

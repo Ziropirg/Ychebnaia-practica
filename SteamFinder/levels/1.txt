@@ -1,0 +1,6 @@
+761 391 292 437 643 112 828 159 659 125 0 1 2 3 4
+.\\img\\Steampunc\\barrel.ico
+.\\img\\Steampunc\\fan.ico
+.\\img\\Steampunc\\inbox.ico
+.\\img\\Steampunc\\screen.ico
+.\\img\\Steampunc\\search.ico

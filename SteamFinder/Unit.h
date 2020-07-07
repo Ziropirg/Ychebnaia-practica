@@ -21,7 +21,6 @@ __published:	// IDE-managed Components
         TImage *Item3;
         TImage *Item4;
         TImage *Item5;
-        TImageList *Set_of_Items;
         TLabel *Score;
         TLabel *Score_Sizer;
         TButton *End_Game;
