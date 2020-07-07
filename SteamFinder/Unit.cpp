@@ -66,12 +66,13 @@ void __fastcall TMain_Form::Start_GameClick(TObject *Sender)
  Item4->Left = Item4_x; Item4->Top = Item4_y;
  Item5->Left = Item5_x; Item5->Top = Item5_y;
 
+ Label1->Caption = Pict_1.c_str();
  //ѕрисваивание изображений картинкам
- Item1->Picture->LoadFromFile(Pict_1);
- Item2->Picture->LoadFromFile(Pict_2);
- Item3->Picture->LoadFromFile(Pict_3);
- Item4->Picture->LoadFromFile(Pict_4);
- Item5->Picture->LoadFromFile(Pict_5);
+/* Item1->Picture->LoadFromFile(Pict_1.c_str());
+ Item2->Picture->LoadFromFile(Pict_2.c_str());
+ Item3->Picture->LoadFromFile(Pict_3.c_str());
+ Item4->Picture->LoadFromFile(Pict_4.c_str());
+ Item5->Picture->LoadFromFile(Pict_5.c_str());   */
  in_f.close();
 }
 //---------------------------------------------------------------------------

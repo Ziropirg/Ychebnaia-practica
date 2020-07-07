@@ -28,12 +28,11 @@ void __fastcall TMain_Form::Start_GameClick(TObject *Sender)
      Item2_x, Item2_y,
      Item3_x, Item3_y,
      Item4_x, Item4_y,
-     Item5_x, Item5_y,
-     Pict_1, Pict_2, Pict_3, Pict_4, Pict_5;
- string Find;
- //Папка с уровнем и путями к картинкам в файле
+     Item5_x, Item5_y;
+ AnsiString Pict_1, Pict_2, Pict_3, Pict_4, Pict_5;
+ //Папка с уровнем и путями к картинкам в файле и уровни
  //Задание случайных координат
- Item1_x=random(900); Item1_y=random(600);
+ /*Item1_x=random(900); Item1_y=random(600);
  Item2_x=random(900); Item2_y=random(600);
  Item3_x=random(900); Item3_y=random(600);
  Item4_x=random(900); Item4_y=random(600);
@@ -49,7 +48,7 @@ void __fastcall TMain_Form::Start_GameClick(TObject *Sender)
         Item5_x<<" "<< Item5_y<<" "<<
         Pict_1<<" "<< Pict_2<<" "<< Pict_3<<" "<< Pict_4<<" "<< Pict_5;
 
- out_f.close();
+ out_f.close();      */
  in_f.open("1.txt");
 
  //Выгрузка координат из файла
@@ -68,11 +67,11 @@ void __fastcall TMain_Form::Start_GameClick(TObject *Sender)
  Item5->Left = Item5_x; Item5->Top = Item5_y;
 
  //Присваивание изображений картинкам
- Set_of_Items->GetBitmap(Pict_1,Item1->Picture->Bitmap);
- Set_of_Items->GetBitmap(Pict_2,Item2->Picture->Bitmap);
- Set_of_Items->GetBitmap(Pict_3,Item3->Picture->Bitmap);
- Set_of_Items->GetBitmap(Pict_4,Item4->Picture->Bitmap);
- Set_of_Items->GetBitmap(Pict_5,Item5->Picture->Bitmap);
+ Item1->Picture->LoadFromFile(Pict_1);
+ Item2->Picture->LoadFromFile(Pict_2);
+ Item3->Picture->LoadFromFile(Pict_3);
+ Item4->Picture->LoadFromFile(Pict_4);
+ Item5->Picture->LoadFromFile(Pict_5);
  in_f.close();
 }
 //---------------------------------------------------------------------------
