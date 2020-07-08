@@ -60,7 +60,7 @@ void __fastcall TMain_Form::Start_GameClick(TObject *Sender)
  in_f.open(File_path);
  if(!in_f)
  {
-  ShowMessage("Ѕольше уровней нету");
+  ShowMessage("There are no more levels");
   exit(0);
  }
 
@@ -98,7 +98,7 @@ void __fastcall TMain_Form::Start_GameClick(TObject *Sender)
  in_Lor_Text.open(Texts.c_str());
  if(!in_Lor_Text)
  {
-  ShowMessage("“ут могла бы быть стена текста с лором, если бы ее не забыли наисать");
+  ShowMessage("There might have been a wall of text with lore if they hadn't forgotten to write it");
  }
  else
  {
