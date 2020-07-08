@@ -34,7 +34,6 @@ void __fastcall TMain_Form::Start_GameClick(TObject *Sender)
      Item5_x, Item5_y;
  string Pict_1, Pict_2, Pict_3, Pict_4, Pict_5,Main_Picture,Texts,Lor;
  char File_path[16];
- // Make: Folder with level and paths to images in the file and levels
 
  //The task of random coordinates
  /*Item1_x=random(900); Item1_y=random(600);
