@@ -23,7 +23,7 @@ void __fastcall TMain_Form::Start_GameClick(TObject *Sender)
  Start_Game->Caption ="Next level";
  Randomize();
  ofstream out_f;
- ifstream in_f;
+ ifstream in_f,in_Lor_Text;
  int Item1_x, Item1_y,
      Item2_x, Item2_y,
      Item3_x, Item3_y,
@@ -83,9 +83,10 @@ void __fastcall TMain_Form::Start_GameClick(TObject *Sender)
  in_f.close();
 
  //Attempts to insert text from a file into a label
- Main_Lor_Text->Text = File::ReadAllText(LoadFromFile(Texts.c_str()));
- /*Lor = LoadFromFile(Texts.c_str());
- Main_Lor_Text->Caption = Lor;  */
+ in_Lor_Text.open(Texts.c_str());
+ getline(in_Lor_Text,Lor,';');
+ Main_Lor_Text->Caption = Lor.c_str();
+ in_Lor_Text.close();
 }
 //---------------------------------------------------------------------------
 void __fastcall TMain_Form::NoTrue()

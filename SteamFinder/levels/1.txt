@@ -5,3 +5,4 @@
 .\\img\\Steampunc\\screen.ico
 .\\img\\Steampunc\\search.ico
 .\\img\\1Level.bmp
+.\\Texts\\Text1.txt
