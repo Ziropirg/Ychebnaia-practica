@@ -4,12 +4,15 @@
 #include <conio.h>
 #include <iostream.h>
 #include <fstream.h>
+#include <cstring>
+#include <stdio.h>
 #include "Unit.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
 TMain_Form *Main_Form;
 //Here you can declare custom functions (global)
+int counter=0;
 //---------------------------------------------------------------------------
 __fastcall TMain_Form::TMain_Form(TComponent* Owner)
         : TForm(Owner)
@@ -30,6 +33,7 @@ void __fastcall TMain_Form::Start_GameClick(TObject *Sender)
      Item4_x, Item4_y,
      Item5_x, Item5_y;
  string Pict_1, Pict_2, Pict_3, Pict_4, Pict_5,Main_Picture,Texts,Lor;
+ char File_path[16];
  // Make: Folder with level and paths to images in the file and levels
 
  //The task of random coordinates
@@ -49,8 +53,16 @@ void __fastcall TMain_Form::Start_GameClick(TObject *Sender)
         Item5_x<<" "<< Item5_y<<" "<<
         Pict_1<<" "<< Pict_2<<" "<< Pict_3<<" "<< Pict_4<<" "<< Pict_5;
  out_f.close();      */
+ counter++;
+ sprintf(File_path,"%s%d%s",".\\levels\\",counter,".txt");
+ //File_path=".\\levels\\1.txt";
 
- in_f.open(".\\levels\\1.txt");
+ in_f.open(File_path);
+ if(!in_f)
+ {
+  ShowMessage("Ѕольше уровней нету");
+  exit(0);
+ }
 
  //Add a job with a tag when finding an item
  //change the name of a file with a level to +1 to open the next level
@@ -84,8 +96,15 @@ void __fastcall TMain_Form::Start_GameClick(TObject *Sender)
 
  //Attempts to insert text from a file into a label
  in_Lor_Text.open(Texts.c_str());
- getline(in_Lor_Text,Lor,';');
- Main_Lor_Text->Caption = Lor.c_str();
+ if(!in_Lor_Text)
+ {
+  ShowMessage("“ут могла бы быть стена текста с лором, если бы ее не забыли наисать");
+ }
+ else
+ {
+  getline(in_Lor_Text,Lor,';');
+  Main_Lor_Text->Caption = Lor.c_str();
+ }
  in_Lor_Text.close();
 }
 //---------------------------------------------------------------------------
@@ -101,6 +120,7 @@ void __fastcall TMain_Form::Item1Click(TObject *Sender)
  ShowMessage("You found what you were looking for!");
  Start_Game->Visible = true;
  Score_Sizer->Caption = IntToStr(StrToInt(Score_Sizer->Caption)+1);
+ Main_Lor_Text->Caption = " ";
 }
 //---------------------------------------------------------------------------
 

@@ -1,0 +1,8 @@
+100 150 200 250 300 350 400 450 500 550
+.\\img\\Steampunc\\barrel.ico
+.\\img\\Steampunc\\fan.ico
+.\\img\\Steampunc\\inbox.ico
+.\\img\\Steampunc\\screen.ico
+.\\img\\Steampunc\\search.ico
+.\\img\\1Level.bmp
+.\\Texts\\Text2.txt
