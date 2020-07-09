@@ -34,7 +34,6 @@ void __fastcall TMain_Form::Start_GameClick(TObject *Sender)
      Item5_x, Item5_y;
  string Pict_1, Pict_2, Pict_3, Pict_4, Pict_5,Main_Picture,Texts,Lor;
  char File_path[16];
- // Make: Folder with level and paths to images in the file and levels
 
  //The task of random coordinates
  /*Item1_x=random(900); Item1_y=random(600);
@@ -55,57 +54,58 @@ void __fastcall TMain_Form::Start_GameClick(TObject *Sender)
  out_f.close();      */
  counter++;
  sprintf(File_path,"%s%d%s",".\\levels\\",counter,".txt");
- //File_path=".\\levels\\1.txt";
-
  in_f.open(File_path);
  if(!in_f)
  {
-  ShowMessage("There are no more levels");
-  exit(0);
- }
-
- //Add a job with a tag when finding an item
- //change the name of a file with a level to +1 to open the next level
-
- /*if (in_f.open(".\\levels\\1.txt").isOpen())
- ShowMessage("Everything is bad, nothing has opened!"); */
-
- //Loading coordinates from a file
- in_f>>Item1_x>> Item1_y>>
-        Item2_x>> Item2_y>>
-        Item3_x>> Item3_y>>
-        Item4_x>> Item4_y>>
-        Item5_x>> Item5_y>>
-        Pict_1>> Pict_2>> Pict_3>> Pict_4>> Pict_5>>Main_Picture>>Texts;
-
- //The assignment of coordinates to the pictures
- Item1->Left = Item1_x; Item1->Top = Item1_y;
- Item2->Left = Item2_x; Item2->Top = Item2_y;
- Item3->Left = Item3_x; Item3->Top = Item3_y;
- Item4->Left = Item4_x; Item4->Top = Item4_y;
- Item5->Left = Item5_x; Item5->Top = Item5_y;
-
- //Assigning images to images
- Item1->Picture->LoadFromFile(Pict_1.c_str());
- Item2->Picture->LoadFromFile(Pict_2.c_str());
- Item3->Picture->LoadFromFile(Pict_3.c_str());
- Item4->Picture->LoadFromFile(Pict_4.c_str());
- Item5->Picture->LoadFromFile(Pict_5.c_str());
- Main_Image->Picture->LoadFromFile(Main_Picture.c_str());
- in_f.close();
-
- //Attempts to insert text from a file into a label
- in_Lor_Text.open(Texts.c_str());
- if(!in_Lor_Text)
- {
-  ShowMessage("There might have been a wall of text with lore if they hadn't forgotten to write it");
+  ShowMessage("There are no more levels\nEnter your name for the leaderboard and click End game");
+  Main_Lor_Text->Caption = "Enter your name";
+  Personal_Name->Visible = true;
  }
  else
  {
-  getline(in_Lor_Text,Lor,';');
-  Main_Lor_Text->Caption = Lor.c_str();
+  //Add a job with a tag when finding an item
+  //change the name of a file with a level to +1 to open the next level
+
+  /*if (in_f.open(".\\levels\\1.txt").isOpen())
+  ShowMessage("Everything is bad, nothing has opened!"); */
+
+  //Loading coordinates from a file
+  in_f>>Item1_x>> Item1_y>>
+         Item2_x>> Item2_y>>
+         Item3_x>> Item3_y>>
+         Item4_x>> Item4_y>>
+         Item5_x>> Item5_y>>
+         Pict_1>> Pict_2>> Pict_3>> Pict_4>> Pict_5>>Main_Picture>>Texts;
+
+  //The assignment of coordinates to the pictures
+  Item1->Left = Item1_x; Item1->Top = Item1_y;
+  Item2->Left = Item2_x; Item2->Top = Item2_y;
+  Item3->Left = Item3_x; Item3->Top = Item3_y;
+  Item4->Left = Item4_x; Item4->Top = Item4_y;
+  Item5->Left = Item5_x; Item5->Top = Item5_y;
+
+  //Assigning images to images
+  Item1->Picture->LoadFromFile(Pict_1.c_str());
+  Item2->Picture->LoadFromFile(Pict_2.c_str());
+  Item3->Picture->LoadFromFile(Pict_3.c_str());
+  Item4->Picture->LoadFromFile(Pict_4.c_str());
+  Item5->Picture->LoadFromFile(Pict_5.c_str());
+  Main_Image->Picture->LoadFromFile(Main_Picture.c_str());
+  in_f.close();
+
+  //Attempts to insert text from a file into a label
+  in_Lor_Text.open(Texts.c_str());
+  if(!in_Lor_Text)
+  {
+   Main_Lor_Text->Caption = "There might have been a wall of text with lore if they hadn't forgotten to write it";
+  }
+  else
+  {
+   getline(in_Lor_Text,Lor,';');
+   Main_Lor_Text->Caption = Lor.c_str();
+  }
+  in_Lor_Text.close();
  }
- in_Lor_Text.close();
 }
 //---------------------------------------------------------------------------
 void __fastcall TMain_Form::NoTrue()
@@ -151,9 +151,17 @@ void __fastcall TMain_Form::Item5Click(TObject *Sender)
 
 void __fastcall TMain_Form::End_GameClick(TObject *Sender)
 {
+ if(Personal_Name->Visible == true)
+  {
+   ofstream outf_Leaderboard;
+   outf_Leaderboard.open("Leaderboard.txt",ios_base::app);
+   outf_Leaderboard<<"\n"<<Personal_Name->Text.c_str()<<" "<<StrToInt(Score_Sizer->Caption);
+   outf_Leaderboard.close();
+  }
  exit(0);
 }
 //---------------------------------------------------------------------------
+
 
 
 

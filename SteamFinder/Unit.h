@@ -26,6 +26,7 @@ __published:	// IDE-managed Components
         TButton *End_Game;
         TImage *Main_Dialog_Image;
         TLabel *Main_Lor_Text;
+        TEdit *Personal_Name;
         void __fastcall Start_GameClick(TObject *Sender);
         void __fastcall Item1Click(TObject *Sender);
         void __fastcall Item2Click(TObject *Sender);
