@@ -1,2 +1,3 @@
 Ziropirg 10
 Name: Tester Score: 2
+Name: AAA  Score: -3

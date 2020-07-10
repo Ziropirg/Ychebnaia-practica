@@ -36,6 +36,8 @@ __published:	// IDE-managed Components
         TTabSheet *Game_Screen;
         TTabSheet *Pause_Screen;
         TLabel *Game_Paused;
+        TLabel *Finder;
+        TImage *Item_Finded;
         void __fastcall Start_GameClick(TObject *Sender);
         void __fastcall Item1Click(TObject *Sender);
         void __fastcall Item2Click(TObject *Sender);
