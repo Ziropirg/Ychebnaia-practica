@@ -18,7 +18,6 @@ __fastcall TMain_Form::TMain_Form(TComponent* Owner)
         : TForm(Owner)
 {
  //here shove the code that runs before the program starts
-
 }
 //---------------------------------------------------------------------------
 void __fastcall TMain_Form::Start_GameClick(TObject *Sender)
@@ -176,13 +175,16 @@ void __fastcall TMain_Form::End_GameClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-
-
-
-
-
 void __fastcall TMain_Form::Timer_of_timeTimer(TObject *Sender)
 {
+
+ if(StrToInt(Timer_Sizer->Caption) <1)
+ {
+  ShowMessage("You didn't make it");
+  Timer_of_time->Enabled=false;
+
+ }
+
  Timer_Sizer->Caption = IntToStr(StrToInt(Timer_Sizer->Caption)-1);
  if(StrToInt(Timer_Sizer->Caption)<11)
  {

@@ -177,14 +177,6 @@ void __fastcall TMain_Form::End_GameClick(TObject *Sender)
 
 void __fastcall TMain_Form::Timer_of_timeTimer(TObject *Sender)
 {
-
- if(StrToInt(Timer_Sizer->Caption) <1)
- {
-  ShowMessage("You didn't make it");
-  Timer_of_time->Enabled=false;
-
- }
-
  Timer_Sizer->Caption = IntToStr(StrToInt(Timer_Sizer->Caption)-1);
  if(StrToInt(Timer_Sizer->Caption)<11)
  {
@@ -196,6 +188,15 @@ void __fastcall TMain_Form::Timer_of_timeTimer(TObject *Sender)
   Timer->Font->Color = clBlack;
   Timer_Sizer->Font->Color = clBlack;
  }
+ 
+ if(StrToInt(Timer_Sizer->Caption) <1)
+ {
+  Timer_of_time->Enabled=false;
+  ShowMessage("You did not succeed,\n click on the Next Level to continue...");
+  Start_Game->Visible = true;
+  Score_Sizer->Caption = IntToStr(StrToInt(Score_Sizer->Caption)-1);
+ }
+
 }
 //---------------------------------------------------------------------------
 
