@@ -10,6 +10,7 @@
 #include <ExtCtrls.hpp>
 #include <Graphics.hpp>
 #include <ImgList.hpp>
+#include <ComCtrls.hpp>
 //---------------------------------------------------------------------------
 class TMain_Form : public TForm
 {
@@ -31,6 +32,10 @@ __published:	// IDE-managed Components
         TLabel *Timer;
         TLabel *Timer_Sizer;
         TButton *Pause;
+        TPageControl *Game_Pause;
+        TTabSheet *Game_Screen;
+        TTabSheet *Pause_Screen;
+        TLabel *Game_Paused;
         void __fastcall Start_GameClick(TObject *Sender);
         void __fastcall Item1Click(TObject *Sender);
         void __fastcall Item2Click(TObject *Sender);

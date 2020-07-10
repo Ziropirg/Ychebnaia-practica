@@ -13,6 +13,7 @@
 TMain_Form *Main_Form;
 //Here you can declare custom functions (global)
 int counter=0;
+bool Stopped=false;
 //---------------------------------------------------------------------------
 __fastcall TMain_Form::TMain_Form(TComponent* Owner)
         : TForm(Owner)
@@ -204,6 +205,18 @@ void __fastcall TMain_Form::PauseClick(TObject *Sender)
 {
  if(Timer_of_time->Enabled == true) Timer_of_time->Enabled=false;
  else Timer_of_time->Enabled=true;
+ 
+ if (Stopped == false)
+ {
+  Stopped = true;
+  Game_Pause->ActivePageIndex = 1;
+ }
+ else
+ {
+  Stopped = false;
+  Game_Pause->ActivePageIndex = 0;
+ }
 }
 //---------------------------------------------------------------------------
+
 
