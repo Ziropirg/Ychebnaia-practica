@@ -27,10 +27,10 @@ __published:	// IDE-managed Components
         TImage *Main_Dialog_Image;
         TLabel *Main_Lor_Text;
         TEdit *Personal_Name;
-        TTimer *Timer1;
+        TTimer *Timer_of_time;
         TLabel *Timer;
         TLabel *Timer_Sizer;
-        TButton *Button1;
+        TButton *Pause;
         void __fastcall Start_GameClick(TObject *Sender);
         void __fastcall Item1Click(TObject *Sender);
         void __fastcall Item2Click(TObject *Sender);
@@ -39,6 +39,8 @@ __published:	// IDE-managed Components
         void __fastcall Item5Click(TObject *Sender);
         void __fastcall NoTrue();
         void __fastcall End_GameClick(TObject *Sender);
+        void __fastcall Timer_of_timeTimer(TObject *Sender);
+        void __fastcall PauseClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
         __fastcall TMain_Form(TComponent* Owner);

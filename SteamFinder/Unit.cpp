@@ -86,6 +86,9 @@ void __fastcall TMain_Form::Start_GameClick(TObject *Sender)
   Item4->Left = Item4_x; Item4->Top = Item4_y;
   Item5->Left = Item5_x; Item5->Top = Item5_y;
 
+  Timer_Sizer->Caption = Timer;
+  Timer_of_time->Enabled = true;
+
   //Assigning images to images
   Item1->Picture->LoadFromFile(Pict_1.c_str());
   Item2->Picture->LoadFromFile(Pict_2.c_str());
@@ -121,6 +124,7 @@ void __fastcall TMain_Form::Item1Click(TObject *Sender)
 {
  ShowMessage("You found what you were looking for!");
  Start_Game->Visible = true;
+ Timer_of_time->Enabled = false;
  Score_Sizer->Caption = IntToStr(StrToInt(Score_Sizer->Caption)+1);
  Main_Lor_Text->Caption = " ";
 }
@@ -157,14 +161,14 @@ void __fastcall TMain_Form::End_GameClick(TObject *Sender)
   {
    ofstream outf_Leaderboard;
    outf_Leaderboard.open("Leaderboard.txt",ios_base::app);
-   outf_Leaderboard<<Personal_Name->Text.c_str()<<" "<<StrToInt(Score_Sizer->Caption)<<"\n";
+   outf_Leaderboard<<"Name: "<<Personal_Name->Text.c_str()<<"  Score: "<<StrToInt(Score_Sizer->Caption)<<"\n";
    outf_Leaderboard.close();
 
    ifstream inf_Leaderboard;
    string Liders;
    inf_Leaderboard.open("Leaderboard.txt");
-   getline(outf_Leaderboard,Liders,';');
-   ShowMessage Liders;
+   getline(inf_Leaderboard,Liders,';');
+   ShowMessage (Liders.c_str());
    inf_Leaderboard.close();
   }
  exit(0);
@@ -175,4 +179,41 @@ void __fastcall TMain_Form::End_GameClick(TObject *Sender)
 
 
 
+
+void __fastcall TMain_Form::Timer_of_timeTimer(TObject *Sender)
+{
+ Timer_Sizer->Caption = IntToStr(StrToInt(Timer_Sizer->Caption)-1);
+ if(StrToInt(Timer_Sizer->Caption)<11)
+ {
+  Timer->Font->Color = clRed;
+  Timer_Sizer->Font->Color = clRed;
+ }
+ else
+ {
+  Timer->Font->Color = clBlack;
+  Timer_Sizer->Font->Color = clBlack;
+ }
+
+ if(StrToInt(Timer_Sizer->Caption) <1)
+ {
+  ShowMessage("You didn't make it");
+  Timer_of_time->Enabled=false;
+
+  //Brazenly copied from the Internet
+  //This is necessary for the restart
+  AnsiString command =  AnsiString( getenv("COMSPEC") ) + " /c ping -n 2 localhost > nul & \"" + Application->ExeName + "\"";
+    WinExec(command.c_str(),SW_HIDE);
+    Application->Terminate( );
+    Close();
+
+ }
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TMain_Form::PauseClick(TObject *Sender)
+{
+ if(Timer_of_time->Enabled == true) Timer_of_time->Enabled=false;
+ else Timer_of_time->Enabled=true;
+}
+//---------------------------------------------------------------------------
 
