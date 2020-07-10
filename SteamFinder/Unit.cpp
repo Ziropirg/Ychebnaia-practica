@@ -31,7 +31,8 @@ void __fastcall TMain_Form::Start_GameClick(TObject *Sender)
      Item2_x, Item2_y,
      Item3_x, Item3_y,
      Item4_x, Item4_y,
-     Item5_x, Item5_y;
+     Item5_x, Item5_y,
+     Timer;
  string Pict_1, Pict_2, Pict_3, Pict_4, Pict_5,Main_Picture,Texts,Lor;
  char File_path[16];
 
@@ -75,6 +76,7 @@ void __fastcall TMain_Form::Start_GameClick(TObject *Sender)
          Item3_x>> Item3_y>>
          Item4_x>> Item4_y>>
          Item5_x>> Item5_y>>
+         Timer>>
          Pict_1>> Pict_2>> Pict_3>> Pict_4>> Pict_5>>Main_Picture>>Texts;
 
   //The assignment of coordinates to the pictures
@@ -157,10 +159,18 @@ void __fastcall TMain_Form::End_GameClick(TObject *Sender)
    outf_Leaderboard.open("Leaderboard.txt",ios_base::app);
    outf_Leaderboard<<Personal_Name->Text.c_str()<<" "<<StrToInt(Score_Sizer->Caption)<<"\n";
    outf_Leaderboard.close();
+
+   ifstream inf_Leaderboard;
+   string Liders;
+   inf_Leaderboard.open("Leaderboard.txt");
+   getline(outf_Leaderboard,Liders,';');
+   ShowMessage Liders;
+   inf_Leaderboard.close();
   }
  exit(0);
 }
 //---------------------------------------------------------------------------
+
 
 
 
