@@ -92,6 +92,7 @@ void __fastcall TMain_Form::Start_GameClick(TObject *Sender)
 
   //Assigning images to images
   Item1->Picture->LoadFromFile(Pict_1.c_str());
+  Item_Finded->Picture->LoadFromFile(Pict_1.c_str());
   Item2->Picture->LoadFromFile(Pict_2.c_str());
   Item3->Picture->LoadFromFile(Pict_3.c_str());
   Item4->Picture->LoadFromFile(Pict_4.c_str());

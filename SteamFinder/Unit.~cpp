@@ -209,11 +209,14 @@ void __fastcall TMain_Form::PauseClick(TObject *Sender)
  if (Stopped == false)
  {
   Stopped = true;
+  Game_Pause->ActivePageIndex = 1;
  }
  else
  {
   Stopped = false;
+  Game_Pause->ActivePageIndex = 0;
  }
 }
 //---------------------------------------------------------------------------
+
 
