@@ -117,19 +117,23 @@ void __fastcall TMain_Form::Start_GameClick(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TMain_Form::NoTrue()
 {
- ShowMessage("This is not what you are looking for!");
  if(Start_Game->Visible == false)
+   {
    Score_Sizer->Caption = IntToStr(StrToInt(Score_Sizer->Caption)-1);
+   ShowMessage("This is not what you are looking for!");
+   }
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TMain_Form::Item1Click(TObject *Sender)
 {
- ShowMessage("You found what you were looking for!");
- if(Start_Game->Visible == false)
-   Score_Sizer->Caption = IntToStr(StrToInt(Score_Sizer->Caption)+1);
- Start_Game->Visible = true;
  Timer_of_time->Enabled = false;
+ if(Start_Game->Visible == false)
+   {
+   Score_Sizer->Caption = IntToStr(StrToInt(Score_Sizer->Caption)+1);
+   ShowMessage("You found what you were looking for!");
+   }
+ Start_Game->Visible = true;
  Main_Lor_Text->Caption = " ";
 }
 //---------------------------------------------------------------------------

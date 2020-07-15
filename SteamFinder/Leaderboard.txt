@@ -1,3 +1,5 @@
 Ziropirg 10
 Name: Tester Score: 2
 Name: AAA  Score: -3
+Name: Anton  Score: 0
+Name: Ne_Anton  Score: 3
